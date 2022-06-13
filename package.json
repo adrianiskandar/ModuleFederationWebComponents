@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "start:mfe-react": "nx serve react-host --open --devRemotes=react-module",
+    "start:mfe-angular": "nx serve angular-host --open --devRemotes=angular-module",
     "build": "nx build",
     "test": "nx test",
     "postinstall": "ngcc --properties es2020 browser module main"
