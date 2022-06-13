@@ -7,6 +7,10 @@
     "angular-module": "apps/angular-module",
     "angular-module-e2e": "apps/angular-module-e2e",
     "app": "apps/app",
-    "app-e2e": "apps/app-e2e"
+    "app-e2e": "apps/app-e2e",
+    "react-host": "apps/react-host",
+    "react-host-e2e": "apps/react-host-e2e",
+    "react-module": "apps/react-module",
+    "react-module-e2e": "apps/react-module-e2e"
   }
 }
