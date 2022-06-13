@@ -2,6 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "angular-host": "apps/angular-host",
+    "angular-host-e2e": "apps/angular-host-e2e",
+    "angular-module": "apps/angular-module",
+    "angular-module-e2e": "apps/angular-module-e2e",
     "app": "apps/app",
     "app-e2e": "apps/app-e2e"
   }
