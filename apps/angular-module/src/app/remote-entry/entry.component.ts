@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'module-federation-web-components-angular-module-entry',
+  selector: 'angular-module-root',
   template: `<module-federation-web-components-nx-welcome></module-federation-web-components-nx-welcome>`,
 })
 export class RemoteEntryComponent {}

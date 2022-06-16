@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
+import { startsWith } from './router.utils';
+import { WrapperComponent } from './wrapper.component';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -12,9 +14,9 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot(
       [
         {
-          path: 'angular-module',
-          loadChildren: () =>
-            import('angular-module/Module').then((m) => m.RemoteEntryModule),
+          matcher: startsWith('angular-module'),
+          component: WrapperComponent,
+          data: { importName: 'angular-module', elementName: 'angular-module-root' },
         },
         {
           path: '',

@@ -3,12 +3,13 @@
  * compilation, allowing it to be included in the built bundle. This is required
  * for the Module Federation Plugin to expose the Module correctly.
  * */
-import { RemoteEntryModule } from './remote-entry/entry.module';
+import { RemoteEntryModule} from './remote-entry/remote-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { NxWelcomeComponent } from './remote-entry/nx-welcome.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,10 +19,7 @@ import { RouterModule } from '@angular/router';
       [
         {
           path: '',
-          loadChildren: () =>
-            import('./remote-entry/entry.module').then(
-              (m) => m.RemoteEntryModule
-            ),
+          component: NxWelcomeComponent,
         },
       ],
       { initialNavigation: 'enabledBlocking' }

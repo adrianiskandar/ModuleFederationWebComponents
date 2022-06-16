@@ -1,8 +1,8 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
-import pkg from '../../../package.json';
+import { RemoteEntryModule } from './entry.module';
+import { environment } from '../../environments/environment';
+import pkg from '../../../../../package.json';
 
 declare global {
   interface Window {
@@ -15,7 +15,7 @@ if (environment.production) {
 }
 
 // platformBrowserDynamic()
-//   .bootstrapModule(AppModule)
+//   .bootstrapModule(RemoteEntryModule)
 //   .catch((err) => console.error(err));
 
 const ngVersion = pkg.dependencies['@angular/core'];
@@ -25,4 +25,6 @@ if (!platform) {
   platform = platformBrowserDynamic();
   window.platform[ngVersion] = platform;
 }
-platform.bootstrapModule(AppModule).catch((err: any) => console.error(err));
+platform.bootstrapModule(RemoteEntryModule).catch((err: any) => console.error(err));
+
+export { RemoteEntryModule };
