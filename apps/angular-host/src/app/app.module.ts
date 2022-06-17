@@ -19,6 +19,11 @@ import { WrapperComponent } from './wrapper.component';
           data: { importName: 'angular-module', elementName: 'angular-module-root' },
         },
         {
+          matcher: startsWith('react-module'),
+          component: WrapperComponent,
+          data: { importName: 'react-module', elementName: 'react-module-root' },
+        },
+        {
           path: '',
           component: NxWelcomeComponent,
         },

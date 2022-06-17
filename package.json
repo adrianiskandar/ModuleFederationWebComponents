@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "nx serve angular-host --open --devRemotes=angular-module,react-module",
     "start:mfe-react": "nx serve react-host --open --devRemotes=react-module",
     "start:mfe-angular": "nx serve angular-host --open --devRemotes=angular-module",
     "build": "nx build",
     "test": "nx test",
-    "postinstall": "ngcc --properties es2020 browser module main"
+    "postinstall": "ngcc --properties es2020 browser module main",
+    "debug:build": "nx run angular-host:serve:development"
   },
   "private": true,
   "dependencies": {
