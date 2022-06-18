@@ -1,9 +1,19 @@
-<ul class="remote-menu">
-  <li><a routerLink="/">Home</a></li>
+<div class="content">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/angular-icon.svg" width="100px" alt="Angular Icon" />
+      <h1>Angular Host</h1>
+    </div>
+    <ul class="remote-menu">
+      <li><a routerLink="/">Home</a></li>
 
-  <li><a routerLink="angular-module">AngularModule</a></li>
+      <li><a routerLink="angular-module">Angular Module</a></li>
 
-  <li><a routerLink="react-module">ReactModule</a></li>
+      <li><a routerLink="react-module">React Module</a></li>
 
-</ul>
-<router-outlet></router-outlet>
+    </ul>
+  </div>
+  <div class="federated-module">
+    <router-outlet></router-outlet>
+  </div>
+</div>
