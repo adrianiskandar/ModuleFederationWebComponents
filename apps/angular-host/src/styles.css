@@ -45,6 +45,16 @@ h3, .content h3 {
   grid-area: sidebar;
 }
 
+.sidebar ul {
+  padding: 20px;
+}
+
+.sidebar li, .module-content-header li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .sidebar-header {
   display: flex;
   justify-content: center;
@@ -68,6 +78,10 @@ h3, .content h3 {
   align-items: center;
 }
 
+.module-content-header li {
+  float: left;
+  padding: 0 10px;
+}
 .module-content-header img {
   float: left;
 }
