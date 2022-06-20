@@ -46,7 +46,7 @@ h3, .content h3 {
 }
 
 .sidebar ul {
-  padding: 20px;
+  padding-left: 20px;
 }
 
 .sidebar li, .module-content-header li {
