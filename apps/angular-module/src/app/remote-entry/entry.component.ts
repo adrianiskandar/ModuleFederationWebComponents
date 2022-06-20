@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'angular-module-root',
-  template: `<module-federation-web-components-nx-welcome></module-federation-web-components-nx-welcome>`,
+  templateUrl: './entry.component.html',
+  styleUrls: ['./entry.component.css'],
 })
 export class RemoteEntryComponent {}
