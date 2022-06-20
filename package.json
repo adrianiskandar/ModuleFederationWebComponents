@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve angular-host --open --devRemotes=angular-module,react-module",
+    "start:react": "nx serve react-host --open --devRemotes=angular-module,react-module",
     "start:mfe-react": "nx serve react-host --open --devRemotes=react-module",
     "start:mfe-angular": "nx serve angular-host --open --devRemotes=angular-module",
     "build": "nx build",
