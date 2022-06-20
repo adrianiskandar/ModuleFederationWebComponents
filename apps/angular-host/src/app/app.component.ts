@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'module-federation-web-components-root',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-host';
+  user = '';
+  @HostListener('document:user-selected', ['$event.detail'])
+  changeColor(user: string): void {
+    console.log(user);
+    this.user = user;
+  }
 }

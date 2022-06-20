@@ -12,6 +12,7 @@
       <li><a routerLink="react-module">React Module</a></li>
 
     </ul>
+    <p class="user" *ngIf="user">Hello {{this.user}}!</p>
   </div>
   <div class="federated-module">
     <router-outlet></router-outlet>

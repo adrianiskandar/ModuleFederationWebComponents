@@ -2,6 +2,7 @@
 import styles from './app.module.css';
 import { Route, Link, Routes } from 'react-router-dom';
 import Home from './home/home';
+import Mui from './mui/mui';
 
 export function App() {
   return (
@@ -23,6 +24,11 @@ export function App() {
                 </Link>
               </li>
               <li>
+                <Link className="body-small link" to="/react-module/mui">
+                  MUI
+                </Link>
+              </li>
+              <li>
                 <a href="/" className="body-small link">
                   Host-Home
                 </a>
@@ -34,6 +40,7 @@ export function App() {
       <div className="module-content">
         <Routes>
           <Route path="/react-module" element={<Home />} />
+          <Route path="/react-module/mui" element={<Mui />} />
         </Routes>
       </div>
     </>
