@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  line-height: 1.5;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: inherit;
+  line-height: inherit;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+h1, .content h1 {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h2, .content h2 {
+  font-size: large;
+  font-weight: bold;
+}
+
+h3, .content h3 {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.content {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 'sidebar content';
+  grid-template-columns: 300px auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.sidebar ul {
+  padding-left: 20px;
+}
+
+.sidebar li, .module-content-header li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-header img {
+  float: left;
+}
+
+.react-icon {
+  padding: 15px;
+}
+
+.federated-module {
+  grid-area: content;
+  background-color: white;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.module-content-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.module-content-header li {
+  float: left;
+  padding: 0 10px;
+}
+.module-content-header img {
+  float: left;
+}
+
+
+.home-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+h1.plus {
+  font-size: xxx-large;
+  padding: 20px;
+}

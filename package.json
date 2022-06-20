@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve angular-host --open --devRemotes=angular-module,react-module",
+    "start": "npm run start:angular",
+    "start:angular": "nx serve angular-host --open --devRemotes=angular-module,react-module",
     "start:react": "nx serve react-host --open --devRemotes=angular-module,react-module",
+    "start:react-host": "nx run react-host:serve:development --open=true",
     "start:mfe-react": "nx serve react-host --open --devRemotes=react-module",
     "start:mfe-angular": "nx serve angular-host --open --devRemotes=angular-module",
     "build": "nx build",
