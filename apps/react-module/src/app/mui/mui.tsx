@@ -21,7 +21,7 @@ export function Mui(props: MuiProps) {
   return (
     <div className={styles['container']}>
       <h2>
-        Now angular can use the most popular react components library, Material
+        Now <span className={styles['framework-text']}>Angular</span> every framework can use the most popular react components library, Material
         UI components!
       </h2>
       <Button variant="contained">Hello World</Button>
