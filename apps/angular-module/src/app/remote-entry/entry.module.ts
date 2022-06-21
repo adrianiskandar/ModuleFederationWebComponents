@@ -4,12 +4,16 @@ import { RouterModule } from '@angular/router';
 import { createCustomElement } from '@angular/elements';
 
 import { RemoteEntryComponent } from './entry.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from '../home/home.component';
+import { MaterialComponent } from '../material/material.component';
 
 @NgModule({
-  declarations: [RemoteEntryComponent, NxWelcomeComponent, HomeComponent],
+  declarations: [
+    RemoteEntryComponent,
+    HomeComponent,
+    MaterialComponent,
+  ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -17,6 +21,10 @@ import { HomeComponent } from '../home/home.component';
       {
         path: 'angular-module',
         component: HomeComponent,
+      },
+      {
+        path: 'angular-module/material',
+        component: MaterialComponent,
       },
     ]),
   ],

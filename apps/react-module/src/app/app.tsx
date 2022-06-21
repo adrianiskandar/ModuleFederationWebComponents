@@ -14,7 +14,7 @@ export function App() {
           width="80px"
           alt="React Icon"
         />
-        <h1>React Remote Component</h1>
+        <h2>React Remote Component</h2>
         <div className="page-menu">
           <nav>
             <ul className="sub-menu">
