@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/* angular material components does't work unless you add the default css theme in the host, this is a big disadvantage */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 html {
   -webkit-text-size-adjust: 100%;

@@ -7,12 +7,21 @@ import { RemoteEntryComponent } from './entry.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from '../home/home.component';
 import { MaterialComponent } from '../material/material.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     RemoteEntryComponent,
     HomeComponent,
     MaterialComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,8 +36,16 @@ import { MaterialComponent } from '../material/material.component';
         component: MaterialComponent,
       },
     ]),
+    MatButtonModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [
+  ],
 })
 export class RemoteEntryModule implements DoBootstrap {
   constructor(private injector: Injector) {}
