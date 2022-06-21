@@ -29,10 +29,20 @@ export function App() {
             </li>
 
             <li>
-              <Link to="/react-module">React Module</Link>
+              <Link to="/angular-module">Angular Module</Link>
+              <ul>
+                <li>
+                  <a href="/angular-module/material">Material</a>
+                </li>
+              </ul>
             </li>
             <li>
-              <Link to="/angular-module">Angular Module</Link>
+              <Link to="/react-module">React Module</Link>
+              <ul>
+                <li>
+                  <a href="/react-module/mui">MUI</a>
+                </li>
+              </ul>
             </li>
           </ul>
           {username && <p className="user">Hello {username}!</p>}
@@ -41,7 +51,7 @@ export function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
-              path="/react-module"
+              path="/react-module/*"
               element={
                 <Wrapper
                   importName="react-module"
@@ -50,7 +60,7 @@ export function App() {
               }
             />
             <Route
-              path="/angular-module"
+              path="/angular-module/*"
               element={
                 <Wrapper
                   importName="angular-module"
