@@ -15,7 +15,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     RemoteEntryComponent,
@@ -38,6 +38,7 @@ import { MatInputModule } from '@angular/material/input';
     ]),
     MatButtonModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatDialogModule,
     FormsModule,

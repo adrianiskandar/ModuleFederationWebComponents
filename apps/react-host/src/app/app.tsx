@@ -5,13 +5,18 @@ import Wrapper from './wrapper/wrapper';
 import Home from './home/home';
 
 export function App() {
+  const [username, setUsername] = React.useState('');
+  document.addEventListener('user-selected', (event: any) => {
+    setUsername(event.detail);
+  });
+
   return (
     <React.Suspense fallback={null}>
       <div className="content">
         <div className="sidebar">
           <div className="sidebar-header">
             <img
-            className='react-icon'
+              className="react-icon"
               src="assets/react-icon.svg"
               width="90px"
               alt="React Icon"
@@ -30,6 +35,7 @@ export function App() {
               <Link to="/angular-module">Angular Module</Link>
             </li>
           </ul>
+          {username && <p className="user">Hello {username}!</p>}
         </div>
         <div className="federated-module">
           <Routes>

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DialogComponent } from '../dialog/dialog.component';
-import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'module-federation-web-components-material',
@@ -8,7 +8,14 @@ import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
   styleUrls: ['./material.component.css'],
 })
 export class MaterialComponent implements OnInit {
-  constructor(private dialog: MatDialog) {}
+  name: string;
+  username: string;
+  @Output() setUsername = new EventEmitter();
+
+  constructor(private dialog: MatDialog) {
+    this.name = 'Adrian';
+    this.username = '';
+  }
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
@@ -16,10 +23,14 @@ export class MaterialComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '500px';
-    dialogConfig.data = { name: "some name", animal: "some animal" };
+    dialogConfig.data = { name: this.name, username: this.username };
 
-
-    this.dialog.open(DialogComponent, dialogConfig);
+    const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe((result) => {
+      this.username = result;
+      const event = new CustomEvent('user-selected', { detail: this.username });
+      document.dispatchEvent(event);
+    });
   }
 
   ngOnInit(): void {}

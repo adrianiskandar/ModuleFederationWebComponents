@@ -8,6 +8,7 @@
 
 section {
   display: table;
+  padding: 10px 0;
 }
 
 .example-label {

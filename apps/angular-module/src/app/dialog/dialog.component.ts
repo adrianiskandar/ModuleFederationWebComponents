@@ -6,7 +6,7 @@ import {
 } from '@angular/material/dialog';
 
 export interface DialogData {
-  animal: string;
+  username: string;
   name: string;
 }
 
@@ -21,7 +21,6 @@ export class DialogComponent {
     public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
-    console.log(data);
   }
 
   onNoClick(): void {
