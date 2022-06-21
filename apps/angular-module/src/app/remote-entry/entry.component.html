@@ -1,13 +1,24 @@
 <div class="module-content-header">
   <img src="assets/angular-icon.svg" width="100px" alt="Angular Icon" />
   <h1>Angular Remote Component</h1>
+  <div className="page-menu">
+    <nav>
+      <ul className="sub-menu">
+        <li>
+          <a routerLink="/angular-module">Home</a>
+        </li>
+        <li>
+          <a href="/react-module/mui">React MUI</a>
+        </li>
+        <li>
+          <a href="/" className="body-small link">
+            Host-Home
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 <div class="module-content">
-  <p>
-    This page is an Angular component loading from a remote application encapsulated in a web component!
-  </p>
-
-  <div class="home-icons">
-    <img src="assets/wc-angular.png" width="50%" alt="Module Federation logo" />
-  </div>
+  <router-outlet></router-outlet>
 </div>

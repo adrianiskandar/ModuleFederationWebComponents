@@ -6,27 +6,29 @@ import { createCustomElement } from '@angular/elements';
 import { RemoteEntryComponent } from './entry.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HomeComponent } from '../home/home.component';
 
 @NgModule({
-  declarations: [RemoteEntryComponent, NxWelcomeComponent],
+  declarations: [RemoteEntryComponent, NxWelcomeComponent, HomeComponent],
   imports: [
     BrowserModule,
     CommonModule,
-    RouterModule.forChild([
+    RouterModule.forRoot([
       {
-        path: '',
-        component: RemoteEntryComponent,
+        path: 'angular-module',
+        component: HomeComponent,
       },
     ]),
   ],
   providers: [],
 })
 export class RemoteEntryModule implements DoBootstrap {
-  constructor(private injector: Injector) {
-  }
+  constructor(private injector: Injector) {}
 
   ngDoBootstrap() {
-    const webComponent = createCustomElement(RemoteEntryComponent, { injector: this.injector });
+    const webComponent = createCustomElement(RemoteEntryComponent, {
+      injector: this.injector,
+    });
     customElements.define('angular-module-root', webComponent);
   }
 }
