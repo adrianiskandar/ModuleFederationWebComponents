@@ -80,6 +80,10 @@ h3, .content h3 {
   align-items: center;
 }
 
+.page-menu {
+  display: flex;
+}
+
 .module-content-header li {
   float: left;
   padding: 0 10px;

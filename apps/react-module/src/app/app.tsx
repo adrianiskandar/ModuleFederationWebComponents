@@ -15,27 +15,25 @@ export function App() {
           alt="React Icon"
         />
         <h2>React Remote Component</h2>
-        <div className="page-menu">
           <nav>
-            <ul className="sub-menu">
+            <ul className="page-menu">
               <li>
-                <Link className="body-small link" to="/react-module">
+                <Link to="/react-module">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="body-small link" to="/react-module/mui">
+                <Link to="/react-module/mui">
                   MUI
                 </Link>
               </li>
               <li>
-                <a href="/" className="body-small link">
+                <a href="/">
                   Host-Home
                 </a>
               </li>
             </ul>
           </nav>
-        </div>
       </div>
       <div className="module-content">
         <Routes>
