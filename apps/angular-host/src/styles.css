@@ -71,7 +71,7 @@ h3, .content h3 {
   grid-area: content;
   background-color: white;
   height: 100%;
-  padding: 0 20px;
+  padding: 5px 20px;
 }
 
 .module-content-header {
