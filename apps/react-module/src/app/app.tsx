@@ -3,6 +3,7 @@ import styles from './app.module.css';
 import { Route, Link, Routes } from 'react-router-dom';
 import Home from './home/home';
 import Mui from './mui/mui';
+import MultipleEntry from './multiple-entry/multiple-entry';
 
 export function App() {
   return (
@@ -39,6 +40,7 @@ export function App() {
         <Routes>
           <Route path="/react-module" element={<Home />} />
           <Route path="/react-module/mui" element={<Mui />} />
+          <Route path="/multiple" element={<MultipleEntry />} />
         </Routes>
       </div>
     </>

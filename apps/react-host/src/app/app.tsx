@@ -3,6 +3,7 @@ import NxWelcome from './nx-welcome';
 import { Link, Route, Routes } from 'react-router-dom';
 import Wrapper from './wrapper/wrapper';
 import Home from './home/home';
+import MultipleApps from './multiple-apps/multiple-apps';
 
 export function App() {
   const [username, setUsername] = React.useState('');
@@ -44,6 +45,8 @@ export function App() {
                 </li>
               </ul>
             </li>
+            <li><a href="/multiple">Multiple Apps</a></li>
+
           </ul>
           {username && <p className="user">Hello {username}!</p>}
         </div>
@@ -68,6 +71,7 @@ export function App() {
                 />
               }
             />
+            <Route path="/multiple" element={<MultipleApps />} />
           </Routes>
         </div>
       </div>

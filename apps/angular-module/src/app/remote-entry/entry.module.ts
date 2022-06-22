@@ -16,12 +16,15 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MultipleEntryComponent } from '../multiple-entry/multiple-entry.component';
+
 @NgModule({
   declarations: [
     RemoteEntryComponent,
     HomeComponent,
     MaterialComponent,
     DialogComponent,
+    MultipleEntryComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,10 @@ import { MatNativeDateModule } from '@angular/material/core';
         path: 'angular-module/material',
         component: MaterialComponent,
       },
+      {
+        path: 'multiple',
+        component: MultipleEntryComponent,
+      },
     ]),
     MatButtonModule,
     MatDatepickerModule,
@@ -43,10 +50,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDialogModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
   ],
-  providers: [
-  ],
+  providers: [],
 })
 export class RemoteEntryModule implements DoBootstrap {
   constructor(private injector: Injector) {}

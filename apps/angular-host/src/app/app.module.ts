@@ -7,9 +7,16 @@ import { RouterModule } from '@angular/router';
 import { startsWith } from './router.utils';
 import { WrapperComponent } from './wrapper.component';
 import { HomeComponent } from './home/home.component';
+import { MultipleAppsComponent } from './multiple-apps/multiple-apps.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    NxWelcomeComponent,
+    HomeComponent,
+    MultipleAppsComponent,
+    WrapperComponent
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
@@ -33,6 +40,10 @@ import { HomeComponent } from './home/home.component';
         {
           path: '',
           component: HomeComponent,
+        },
+        {
+          path: 'multiple',
+          component: MultipleAppsComponent,
         },
       ],
       { initialNavigation: 'enabledBlocking' }
