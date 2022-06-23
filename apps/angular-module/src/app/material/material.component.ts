@@ -2,6 +2,19 @@ import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
+export interface Browser {
+  name: string;
+  os: string;
+  type: string;
+  version: string;
+}
+declare global {
+  interface Window {
+    browser: Browser;
+    platform: any;
+  }
+}
+
 @Component({
   selector: 'module-federation-web-components-material',
   templateUrl: './material.component.html',
@@ -10,6 +23,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 export class MaterialComponent implements OnInit {
   name: string;
   username: string;
+  browser: string;
 
   @HostListener('document:user-selected', ['$event.detail'])
   changeUser(user: string): void {
@@ -19,6 +33,7 @@ export class MaterialComponent implements OnInit {
   constructor(private dialog: MatDialog) {
     this.name = 'Adrian';
     this.username = '';
+    this.browser = JSON.stringify(window.browser);
   }
 
   openDialog() {

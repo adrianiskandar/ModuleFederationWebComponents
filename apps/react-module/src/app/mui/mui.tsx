@@ -5,7 +5,18 @@ import FaceIcon from '@mui/icons-material/Face';
 
 import styles from './mui.module.css';
 import SimpleDialogDemo from './dialog';
-
+export interface Browser {
+  name: string;
+  os: string;
+  type: string;
+  version: string;
+}
+declare global {
+  interface Window {
+    browser: Browser;
+    platform: any;
+  }
+}
 
 /* eslint-disable-next-line */
 export interface MuiProps {}
@@ -13,6 +24,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 export function Mui(props: MuiProps) {
   const [value, setValue] = React.useState<number>(30);
+  const browser = JSON.stringify(window.browser);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number);
@@ -21,8 +33,9 @@ export function Mui(props: MuiProps) {
   return (
     <div className={styles['container']}>
       <h2>
-        Now <span className={styles['framework-text']}>Angular</span> every framework can use the most popular react components library, Material
-        UI components!
+        Now <span className={styles['framework-text']}>Angular</span> every
+        framework can use the most popular react components library, Material UI
+        components!
       </h2>
       <Button variant="contained">Hello World</Button>
       <br></br>
@@ -41,6 +54,16 @@ export function Mui(props: MuiProps) {
       <Chip icon={<FaceIcon />} label="With Icon" variant="outlined" />
       <br></br>
       <SimpleDialogDemo></SimpleDialogDemo>
+      <br></br>
+      <section>
+        <p>
+          Child/Remote apps can access shared libraries from the Host app. Think
+          about sharing libraries for common problems, like authentication,
+          i18n, analytics, and more. In this simple example, we are sharing a
+          library for Browser detection:
+        </p>
+        <span>{browser}</span>
+      </section>
     </div>
   );
 }

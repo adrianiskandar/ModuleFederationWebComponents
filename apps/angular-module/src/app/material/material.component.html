@@ -1,5 +1,6 @@
 <h2>
-  Now <span class='framework-text'>React</span> every framework can use the most popular angular components library, Angular Material
+  Now <span class='framework-text'>React</span> every framework can use the most popular angular components library,
+  Angular Material
   components!
 </h2>
 
@@ -23,9 +24,16 @@
   </mat-form-field>
 </section>
 
-<section >
+<section>
   <button mat-raised-button (click)="openDialog()">Open dialog</button>
   <span *ngIf="username">
     Hello <i>{{username}}</i>!
   </span>
+</section>
+
+<section>
+  <p>Child/Remote apps can access shared libraries from the Host app. Think about sharing libraries for common
+    problems, like authentication, i18n, analytics, and more. In this simple example, we are sharing a library for
+    Browser detection:</p>
+  <span>{{browser}}</span>
 </section>

@@ -4,12 +4,28 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Wrapper from './wrapper/wrapper';
 import Home from './home/home';
 import MultipleApps from './multiple-apps/multiple-apps';
+import { detect } from 'detect-browser';
+
+export interface Browser {
+  name: string;
+  os: string;
+  type: string;
+  version: string;
+}
+declare global {
+  interface Window {
+    browser: Browser;
+    platform: any;
+  }
+}
 
 export function App() {
   const [username, setUsername] = React.useState('');
   document.addEventListener('user-selected', (event: any) => {
     setUsername(event.detail);
   });
+
+  window.browser = detect() as Browser;
 
   return (
     <React.Suspense fallback={null}>
