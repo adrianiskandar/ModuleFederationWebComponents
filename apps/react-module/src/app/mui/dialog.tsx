@@ -16,15 +16,15 @@ const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 export interface SimpleDialogProps {
   open: boolean;
-  selectedValue: string;
+  username: string;
   onClose: (value: string) => void;
 }
 
 function SimpleDialog(props: SimpleDialogProps) {
-  const { onClose, selectedValue, open } = props;
+  const { onClose, username, open } = props;
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose(username);
   };
 
   const handleListItemClick = (value: string) => {
@@ -60,7 +60,10 @@ function SimpleDialog(props: SimpleDialogProps) {
 
 export default function SimpleDialogDemo() {
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState('');
+  const [username, setUsername] = React.useState('');
+  document.addEventListener('user-selected', (event: any) => {
+    setUsername(event.detail);
+  });
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -68,7 +71,7 @@ export default function SimpleDialogDemo() {
 
   const handleClose = (value: string) => {
     setOpen(false);
-    setSelectedValue(value);
+    setUsername(value);
     const event = new CustomEvent('user-selected', { detail: value });
     document.dispatchEvent(event);
   };
@@ -76,14 +79,14 @@ export default function SimpleDialogDemo() {
   return (
     <div>
       <Typography variant="subtitle1" component="div">
-        Selected: {selectedValue}
+        Selected: {username}
       </Typography>
       <br />
       <Button variant="outlined" onClick={handleClickOpen}>
         Open simple dialog
       </Button>
       <SimpleDialog
-        selectedValue={selectedValue}
+        username={username}
         open={open}
         onClose={handleClose}
       />

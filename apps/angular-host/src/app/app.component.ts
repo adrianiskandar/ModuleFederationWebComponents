@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'angular-host';
   user = '';
   @HostListener('document:user-selected', ['$event.detail'])
-  changeColor(user: string): void {
+  changeUser(user: string): void {
     console.log(user);
     this.user = user;
   }

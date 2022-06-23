@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
@@ -10,7 +10,11 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 export class MaterialComponent implements OnInit {
   name: string;
   username: string;
-  @Output() setUsername = new EventEmitter();
+
+  @HostListener('document:user-selected', ['$event.detail'])
+  changeUser(user: string): void {
+    this.username = user;
+  }
 
   constructor(private dialog: MatDialog) {
     this.name = 'Adrian';
