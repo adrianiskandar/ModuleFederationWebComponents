@@ -4,15 +4,17 @@ import {
   ElementRef,
   Input,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { registry, Registry } from './registry';
 
 @Component({
-  selector: 'module-federation-web-components-wrapper',
+  selector: 'module-federation-web-components-shadow-wrapper',
   template: '<div #vc></div>',
+  encapsulation: ViewEncapsulation.ShadowDom
 })
-export class WrapperComponent implements AfterContentInit {
+export class ShadowWrapperComponent implements AfterContentInit {
   @ViewChild('vc', { read: ElementRef, static: true })
   vc!: ElementRef;
 

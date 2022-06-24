@@ -6,6 +6,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { startsWith } from './router.utils';
 import { WrapperComponent } from './wrapper.component';
+import { ShadowWrapperComponent } from './shadow-wrapper.component';
 import { HomeComponent } from './home/home.component';
 import { MultipleAppsComponent } from './multiple-apps/multiple-apps.component';
 
@@ -15,7 +16,8 @@ import { MultipleAppsComponent } from './multiple-apps/multiple-apps.component';
     NxWelcomeComponent,
     HomeComponent,
     MultipleAppsComponent,
-    WrapperComponent
+    WrapperComponent,
+    ShadowWrapperComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,22 @@ import { MultipleAppsComponent } from './multiple-apps/multiple-apps.component';
         {
           path: 'multiple',
           component: MultipleAppsComponent,
+        },
+        {
+          matcher: startsWith('shadow-angular-module'),
+          component: ShadowWrapperComponent,
+          data: {
+            importName: 'angular-module',
+            elementName: 'angular-module-root',
+          },
+        },
+        {
+          matcher: startsWith('shadow-react-module'),
+          component: ShadowWrapperComponent,
+          data: {
+            importName: 'react-module',
+            elementName: 'react-module-root',
+          },
         },
       ],
       { initialNavigation: 'enabledBlocking' }

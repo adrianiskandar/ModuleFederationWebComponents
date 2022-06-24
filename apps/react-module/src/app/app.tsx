@@ -41,6 +41,7 @@ export function App() {
           <Route path="/react-module" element={<Home />} />
           <Route path="/react-module/mui" element={<Mui />} />
           <Route path="/multiple" element={<MultipleEntry />} />
+          <Route path="/shadow-react-module" element={<Home />} />
         </Routes>
       </div>
     </>

@@ -5,6 +5,7 @@ import Wrapper from './wrapper/wrapper';
 import Home from './home/home';
 import MultipleApps from './multiple-apps/multiple-apps';
 import { detect } from 'detect-browser';
+import ShadowWrapper from './wrapper/shadow-wrapper';
 
 export interface Browser {
   name: string;
@@ -61,8 +62,15 @@ export function App() {
                 </li>
               </ul>
             </li>
-            <li><a href="/multiple">Multiple Apps</a></li>
-
+            <li>
+              <a href="/multiple">Multiple Apps</a>
+            </li>
+            <li>
+              <a href="/shadow-angular-module">Shadow DOM Angular</a>
+            </li>
+            <li>
+              <a href="/shadow-react-module">Shadow DOM React</a>
+            </li>
           </ul>
           {username && <p className="user">Hello {username}!</p>}
         </div>
@@ -88,6 +96,24 @@ export function App() {
               }
             />
             <Route path="/multiple" element={<MultipleApps />} />
+            <Route
+              path="/shadow-react-module/*"
+              element={
+                <ShadowWrapper
+                  importName="react-module"
+                  elementName="react-module-root"
+                />
+              }
+            />
+            <Route
+              path="/shadow-angular-module/*"
+              element={
+                <ShadowWrapper
+                  importName="angular-module"
+                  elementName="angular-module-root"
+                />
+              }
+            />
           </Routes>
         </div>
       </div>

@@ -42,6 +42,10 @@ import { MultipleEntryComponent } from '../multiple-entry/multiple-entry.compone
         path: 'multiple',
         component: MultipleEntryComponent,
       },
+      {
+        path: 'shadow-angular-module',
+        component: HomeComponent,
+      },
     ]),
     MatButtonModule,
     MatDatepickerModule,
