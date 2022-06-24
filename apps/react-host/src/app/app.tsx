@@ -6,6 +6,7 @@ import Home from './home/home';
 import MultipleApps from './multiple-apps/multiple-apps';
 import { detect } from 'detect-browser';
 import ShadowWrapper from './wrapper/shadow-wrapper';
+import IFrame from './i-frame/i-frame';
 
 export interface Browser {
   name: string;
@@ -71,6 +72,9 @@ export function App() {
             <li>
               <a href="/shadow-react-module">Shadow DOM React</a>
             </li>
+            <li>
+              <a href="/iframe">iFrame</a>
+            </li>
           </ul>
           {username && <p className="user">Hello {username}!</p>}
         </div>
@@ -114,6 +118,7 @@ export function App() {
                 />
               }
             />
+            <Route path="/iframe" element={<IFrame />} />
           </Routes>
         </div>
       </div>

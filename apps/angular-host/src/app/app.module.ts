@@ -9,6 +9,7 @@ import { WrapperComponent } from './wrapper.component';
 import { ShadowWrapperComponent } from './shadow-wrapper.component';
 import { HomeComponent } from './home/home.component';
 import { MultipleAppsComponent } from './multiple-apps/multiple-apps.component';
+import { IframeComponent } from './iframe/iframe.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MultipleAppsComponent } from './multiple-apps/multiple-apps.component';
     HomeComponent,
     MultipleAppsComponent,
     WrapperComponent,
-    ShadowWrapperComponent
+    ShadowWrapperComponent,
+    IframeComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,10 @@ import { MultipleAppsComponent } from './multiple-apps/multiple-apps.component';
             importName: 'react-module',
             elementName: 'react-module-root',
           },
+        },
+        {
+          path: 'iframe',
+          component: IframeComponent,
         },
       ],
       { initialNavigation: 'enabledBlocking' }
