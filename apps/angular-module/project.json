@@ -1,10 +1,12 @@
 {
+  "name": "angular-module",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/angular-module/src",
   "prefix": "module-federation-web-components",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:webpack-browser",
+      "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/angular-module",
@@ -59,7 +61,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nrwl/angular:webpack-server",
+      "executor": "@nx/angular:webpack-dev-server",
       "configurations": {
         "production": {
           "browserTarget": "angular-module:build:production"
@@ -81,7 +83,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": [
           "apps/angular-module/**/*.ts",
@@ -90,15 +92,15 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/angular-module"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/angular-module"],
       "options": {
         "jestConfig": "apps/angular-module/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "serve-static": {
-      "executor": "@nrwl/angular:file-server",
+      "executor": "@nrwl/web:file-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "angular-module:build",
